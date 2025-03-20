@@ -43,11 +43,11 @@ class User extends Model {
 
     // Relations
 
-    /*@HasMany(() => Appointment)
+    @HasMany(() => Appointment)
     declare appointments: Appointment[];
 
     @HasMany(() => MedicalRecord)
-    declare medicalRecords: MedicalRecord[]; */
+    declare medicalRecords: MedicalRecord[];
 }
 
 export default User;

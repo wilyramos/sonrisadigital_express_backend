@@ -3,6 +3,9 @@ import morgan from 'morgan'
 import { db } from './config/db'
 // import budgetRouter from './routes/budgetRouter'
 import authRouter from './routes/authRouter'
+import medicRouter from './routes/medicRouter'
+import citaRouter from './routes/citaRouter'
+import MedicalRecord from './routes/medicalRecord'
 
 export async function connectDB () {
     try {
@@ -24,6 +27,15 @@ app.use(express.json())
 
 // app.use("/api/budgets", budgetRouter)
 app.use("/api/auth", authRouter)
+
+// 
+app.use("/api/medic", medicRouter)
+
+// 
+app.use("/api/cita", citaRouter)
+
+//
+app.use("/api/medicalrecord", MedicalRecord)
 
 //supertest
 
