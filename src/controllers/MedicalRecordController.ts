@@ -6,7 +6,6 @@ import PDFdocument from "pdfkit";
 
 export class MedicalRecordController {
 
-
     // Create a new medical record
     static createMedicRecord = async (req: Request, res: Response) => {
 
@@ -74,6 +73,7 @@ export class MedicalRecordController {
             // Add the medical records to the PDF
             user.medicalRecords.forEach((record, index) => {
                 doc.fontSize(14).text(`${index + 1}. ${record.description}`);
+                doc.fontSize(10).text(`Created at: ${record.createdAt}`);
             });
 
             // Finalize the PDF
